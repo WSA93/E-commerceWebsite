@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BUZZTEEZ.Site.Pages.Site" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="img/Fevicon.png" type="image/png">
+    <link href="../Assets/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="../Assets/themify-icons/themify-icons.css" rel="stylesheet" />
+    <link href="../Assets/nice-select/nice-select.css" rel="stylesheet" />
+    <link href="../Assets/owl-carousel/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="../Assets/owl-carousel/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../Assets/style.css" rel="stylesheet" />
+    <link href="../Assets/linericon/style.css" rel="stylesheet" />
+    <link href="../Assets/nouislider/nouislider.min.css" rel="stylesheet" />
+
+
+    <style type="text/css">
+        .Star {
+            /*background-image: url(../img/Star.gif);*/
+            height: 20px;
+            width: 20px;
+            cursor:pointer;
+            background-repeat:no-repeat;
+            display:block;
+        }
+
+        .WaitingStar {
+            background-image: url(../img/WaitingStar.png);   
+        }
+        .FilledStar {
+            background-image: url(../img/FilledStar.png);
+        }
+
+        .EmptyStar {
+            background-image: url(../img/Star.png);
+        }
+        </style>
+
+</head>
+<body>
+
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand logo_h" href="index.html">
+                        <%--<img src="img/logo.png" alt="">--%>
+                        BUZZTEEZ
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto mr-5">
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                    aria-expanded="false">Products</a>
+                                <ul class="dropdown-menu">
+                                    <asp:Repeater runat="server" ID="navigation">
+                                        <ItemTemplate>
+                                            <li class="nav-item">
+                                                <asp:HyperLink Text='<%#Eval("ProductCategory")%>' runat="server" class="nav-link" NavigateUrl='<%#Eval("ProductCategory","~/Site/Pages/Category.aspx?category={0}")%>'></asp:HyperLink>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav-shop">
+                            <li class="nav-item">
+                                <asp:HyperLink runat="server" NavigateUrl="~/Site/Pages/UploadPicture.html" Text="Search By Image"></asp:HyperLink>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <button>
+                                    <asp:HyperLink runat="server" NavigateUrl="~/Site/Pages/Cart.aspx">
+                                    <i class="ti-shopping-cart"></i>
+                                    <span class="nav-shop__circle">
+                                      <asp:Label runat="server" ID="cartCount"></asp:Label>
+                                    </span>
+                                    </asp:HyperLink>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================ End Header Menu Area =================-->
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <!--================ Start footer Area  =================-->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row d-flex">
+                    <p class="col-lg-12 footer-text text-center">
+                        BUZZTEEZ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+
+    <script src="../Assets/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../Assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../Assets/skrollr.min.js"></script>
+    <script src="../Assets/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../Assets/nice-select/jquery.nice-select.min.js"></script>
+    <script src="../Assets/jquery.ajaxchimp.min.js"></script>
+    <script src="../Assets/mail-script.js"></script>
+    <script src="../Assets/main.js"></script>
+    <script src="../Assets/nouislider/nouislider.min.js"></script>
+
+</body>
+</html>
