@@ -1,4 +1,4 @@
-# E-commerceWebsite
+# E-commerce Website
 
 It is an e-commerce website for selling online products. It consist of two main panels admin panel and the actual website or user panel.
 
