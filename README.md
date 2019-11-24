@@ -1,6 +1,6 @@
 # E-commerce Website
 
-It is an e-commerce website for selling online products. It consist of two main panels admin panel and the actual website or user panel
+It is an e-commerce website for selling online products. It consist of two main panels admin panel and the actual website or user panel.
 
 In admin panel admin can manage products and admin can perform all CRUD operations related to the products. Admin can also receive orders which can also be managed by the admin.
 
