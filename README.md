@@ -6,4 +6,4 @@ In admin panel admin can manage products and admin can perform all CRUD operatio
 
 Main website or the user panel is for the users where a customer can browse for products, add products to the cart, make account or login in an existing account and finaly make a purchase.
 
-User can also search for products by uploading picture of a product.
+User can also search for products by uploading picture of a product and those products will be displayed which belong to the product category contained in the picture.
